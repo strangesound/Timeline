@@ -1,14 +1,17 @@
 <template>
   <div class="container">
-    <div class="timeline gray" ></div>
+    <div class="timeline gray"></div>
     <div class="timeline yellow" ref="yellowTimeline" @click="handleTimelineClick"></div>
+    <!-- <div class="test-line" ref="testLine"></div> -->
     <div class="uzel-container" ref="uzelContainer" @scroll="handleScroll">
       <div class="uzelok"></div>
-      <div class="timeline-items-container">
-        <TimelineItem v-for="event in evenEvents" :key="event.number" :event="event" @show-detail="showDetail" />
-      </div>
-      <div class="timeline-items-container bottom">
-        <TimelineItem v-for="event in oddEvents" :key="event.number" :event="event" @show-detail="showDetail" />
+      <div class="timeline-crop">
+        <div class="timeline-items-container">
+          <TimelineItem v-for="event in evenEvents" :key="event.id" :event="event" @show-detail="showDetail" />
+        </div>
+        <div class="timeline-items-container bottom">
+          <TimelineItem v-for="event in oddEvents" :key="event.id" :event="event" @show-detail="showDetail" />
+        </div>
       </div>
     </div>
     <Transition>
@@ -23,11 +26,14 @@ import TimelineItem from './components/TimelineItem.vue';
 import EventDetail from './components/EventDetail.vue';
 import data from '@/assets/json/data.json';
 
-const events = ref(data);
+const events = ref(data.map((event, index) => ({ ...event, id: index })));
+// console.log(events);
+
 const selectedEvent = ref(null);
 const eventYears = ref([]);
 const uzelContainer = ref(null);
 const yellowTimeline = ref(null);
+// const testLine = ref(null);
 
 
 const showDetail = (event) => {
@@ -39,10 +45,10 @@ const closeDetail = () => {
 };
 
 
-// Compute only even indexed events
 const evenEvents = computed(() => {
   return events.value.filter((_, index) => index % 2 === 0);
 });
+
 const oddEvents = computed(() => {
   return events.value.filter((_, index) => index % 2 !== 0);
 });
@@ -51,7 +57,7 @@ const getVisibleEvents = () => {
   const container = uzelContainer.value;
   const containerRect = container.getBoundingClientRect();
   const visibleEvents = events.value.filter(event => {
-    const eventElement = document.getElementById(`event-${event.number}`);
+    const eventElement = document.getElementById(`event-${event.id}`);
     if (eventElement) {
       const eventRect = eventElement.getBoundingClientRect();
       return (
@@ -73,8 +79,7 @@ const calculateYearsRange = () => {
     const minYear = Math.min(...years);
     const maxYear = Math.max(...years);
 
-    // console.log('minYear', minYear);
-    // console.log('maxYear', maxYear);
+    console.log('minYear-maxYear', minYear, ' - ', maxYear);
 
     updateYellowTimeline(minYear, maxYear);
   } else {
@@ -83,7 +88,7 @@ const calculateYearsRange = () => {
 };
 
 const minTimelineYear = 1685;
-  const maxTimelineYear = 2035;
+const maxTimelineYear = 2035;
 
 
 const updateYellowTimeline = (minYear, maxYear) => {
@@ -95,12 +100,19 @@ const updateYellowTimeline = (minYear, maxYear) => {
   const maskWidth = (endPercentage - startPercentage) * timelineWidth;
   const maskPosition = startPercentage * timelineWidth;
 
-  // console.log('maskWidth', maskWidth);
-  // console.log('maskPosition', maskPosition);
-  // console.log('timelineWidth', timelineWidth);
+  console.log('startPercentage', startPercentage);
+  console.log('endPercentage', endPercentage);
+  console.log('maskWidth', maskWidth);
+  console.log('maskPosition', maskPosition);
+  console.log('timelineWidth', timelineWidth);
 
-  yellowTimeline.value.style.maskSize = `${maskWidth}px 100%`;
-  yellowTimeline.value.style.maskPosition = `${maskPosition - maskWidth / 2}px center`;
+  yellowTimeline.value.style.maskSize = `${maskWidth}px 100vh`;
+  yellowTimeline.value.style.maskPosition = `${maskPosition}px center`;
+  // yellowTimeline.value.style.maskPosition = `${maskPosition - maskWidth / 2}px center`;
+
+  // testLine.value.style.width = `${maskWidth}px`;
+  // testLine.value.style.marginLeft = `${maskPosition}px`;
+
 };
 
 
@@ -113,7 +125,7 @@ const handleTimelineClick = (event) => {
   const clickX = event.clientX - timelineRect.left;
   const timelineWidth = timelineRect.width;
 
- 
+
   // Calculate the clicked year based on the click position
   const clickYear = minTimelineYear + (clickX / timelineWidth) * (maxTimelineYear - minTimelineYear);
 
@@ -122,7 +134,7 @@ const handleTimelineClick = (event) => {
 
   if (closestEvent) {
     // Get the element of the closest event
-    const eventElement = document.getElementById(`event-${closestEvent.number}`);
+    const eventElement = document.getElementById(`event-${closestEvent.id}`);
     if (eventElement) {
       // Scroll the container to center the closest event
       const containerRect = uzelContainer.value.getBoundingClientRect();
@@ -196,6 +208,7 @@ onMounted(() => {
   width: 100vw;
   height: 100vh;
   overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 .uzel-container::-webkit-scrollbar {
@@ -209,7 +222,7 @@ onMounted(() => {
   transform: translateY(-50%);
   background-image: url("/uzel.webp");
   height: 260px;
-  width: 60000px;
+  width: 59535px;
   background-size: contain;
   background-position: center;
   background-repeat: repeat-x;
@@ -225,14 +238,26 @@ onMounted(() => {
   z-index: 999;
 }
 
+.test-line {
+  width: 3440px;
+  height: 10px;
+  background-color: red;
+  position: absolute;
+  left: 200px;
+  top: 0;
+  transition: all 1s;
+  /* transform: translateX(-50%); */
+  /* z-index: 999; */
+}
+
 .gray {
-  background-image: url("/timeline.svg");
+  background-image: url("/timeline.png");
   background-repeat: no-repeat;
 }
 
 .yellow {
-  background-image: url("/yellow.svg");
-  mask-image: url("/mask.svg");
+  background-image: url("/yellow.png");
+  mask-image: url("/mask.png");
   mask-repeat: no-repeat;
   mask-size: 0 100%;
   mask-position: 0 0;
@@ -243,11 +268,17 @@ onMounted(() => {
   display: grid;
   grid-template-columns: repeat(32, 1fr);
   flex-direction: row;
-  width: 60000px;
+  /* width: 60480px; */
   align-items: end;
   height: 40vh;
-  margin-left: -5vw;
+  margin-left: calc(-945px/2);
   /* gap: 30.5vw; */
+
+}
+
+.timeline-crop {
+  overflow: hidden;
+  width: calc(945px*63);
 
 }
 
@@ -255,7 +286,7 @@ onMounted(() => {
   margin-top: 21vh;
   height: 43vh;
   align-items: start;
-  margin-left: 17vw;
-
+  grid-template-columns: repeat(31, 1890px);
+  margin-left: calc(945px/2);
 }
 </style>

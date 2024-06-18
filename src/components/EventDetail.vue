@@ -1,18 +1,13 @@
 <template>
     <div  @click="closeDetail" class="event-detail">
-        <!-- <div class="scroll-container" @click.stop> -->
             <div class="content">
                 <img src="/svitok.webp" alt="Свиток" class="svitok">
-                <img class="landmark" :src="`/images/image${event.number}.webp`" alt="">
-                <!-- <h2>{{ event.group }}</h2> -->
-                <!-- <h3>{{ event.dates }}</h3> -->
-                <!-- <p><strong>{{ event.short }}</strong></p> -->
-                <!-- <p>{{ event.description }}</p> -->
+                <img class="landmark" :src="`/images/${event.id+1}.webp`" alt="">
                 <p>{{formattedText}}</p>
 
             </div>
         <!-- </div> -->
-        <button @click="closeDetail">Закрыть</button>
+        <!-- <button @click="closeDetail">Закрыть</button> -->
     </div>
 </template>
 
@@ -41,6 +36,7 @@ const closeDetail = () => {
 <style scoped>
 p{
     text-align: left;
+    white-space: pre-wrap;
 }
 
 .scroll-container{

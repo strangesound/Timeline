@@ -1,13 +1,14 @@
 <template>
-  <div @click="showDetail" class="timeline-item" :id="`event-${event.number}`">
-    <div v-if="event.number % 2 === 0" class="vertical-line top">
+  <div @click="showDetail" class="timeline-item" :id="`event-${event.id}`">
+    <div v-if="event.id % 2 !== 0" class="vertical-line top">
       <div class="round"></div>
     </div>
 
-    <div class="date">{{formattedDate}}</div>
+    <div class="index">{{ props.event.id + 1 }}</div>
+    <div class="date">{{ formattedDate }}</div>
     <div class="short">{{ formattedShort }}</div>
-    <!-- <div class="short">{{ event.number }}</div> -->
-    <div v-if="event.number % 2 !== 0" class="vertical-line">
+    <!-- <div class="short">{{ event.index }}</div> -->
+    <div v-if="event.id % 2 === 0" class="vertical-line">
       <div class="round"></div>
     </div>
   </div>
@@ -16,12 +17,14 @@
 <script setup>
 import { computed } from 'vue';
 import Typograf from 'typograf';
-const tp = new Typograf({locale: ['ru', 'en-US']});
+const tp = new Typograf({ locale: ['ru', 'en-US'] });
 
 
 const props = defineProps({
   event: Object,
 });
+
+// console.log(props.event);
 
 const formattedDate = computed(() => tp.execute(props.event.dates));
 const formattedShort = computed(() => tp.execute(props.event.short));
@@ -37,18 +40,23 @@ const showDetail = () => {
 <style scoped>
 .timeline-item {
   cursor: pointer;
-  /* padding: 10px; */
-  width: 1000px;
+  padding: 0 500px;
+  width: calc(945px*2);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+
 }
 
 .date {
   color: #ffffff;
 
+}
+.index {
+  color: #ffffff;
+  font-size: 1vw;
 }
 
 .short {
