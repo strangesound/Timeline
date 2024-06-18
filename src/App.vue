@@ -89,35 +89,16 @@ const updateYellowTimeline = (minYear, maxYear) => {
   const endPercentage = (maxYear - minTimelineYear) / (maxTimelineYear - minTimelineYear);
 
   const maskWidth = (endPercentage - startPercentage) * timelineWidth;
-  const maskPosition = (startPercentage * timelineWidth) + (maskWidth / 2);
+  const maskPosition = startPercentage * timelineWidth;
 
   console.log('maskWidth', maskWidth);
   console.log('maskPosition', maskPosition);
-
+  console.log('timelineWidth', timelineWidth);
 
   yellowTimeline.value.style.maskSize = `${maskWidth}px 100%`;
-  yellowTimeline.value.style.maskPosition = `calc(${maskPosition}px - ${maskWidth / 2}px) 0`;
+  yellowTimeline.value.style.maskPosition = `${maskPosition - maskWidth / 2}px center`;
 };
 
-
-// const updateYellowTimeline = (minYear, maxYear) => {
-//   const minTimelineYear = 1685;
-//   const maxTimelineYear = 2035;
-//   const timelineWidth = uzelContainer.value.scrollWidth;
-
-//   const startPercentage = (minYear - minTimelineYear) / (maxTimelineYear - minTimelineYear);
-//   const endPercentage = (maxYear - minTimelineYear) / (maxTimelineYear - minTimelineYear);
-
-//   const maskSize = `${(endPercentage - startPercentage) * 100}% 100%`;
-//   const maskPosition = `${startPercentage * 100}% 0`;
-
-  
-//   console.log('maskSize', maskSize);
-//   console.log('maskPosition', maskPosition);
-
-//   yellowTimeline.value.style.maskSize = maskSize;
-//   yellowTimeline.value.style.maskPosition = maskPosition;
-// };
 
 const handleScroll = () => {
   calculateYearsRange();
@@ -188,7 +169,7 @@ onMounted(() => {
   background-image: url("/yellow.svg");
   mask-image: url("/mask.svg");
   mask-repeat: no-repeat;
-  mask-size: 245px 100%;
+  mask-size: 0 100%;
   mask-position: 0 0;
   transition: all 1s;
 }
