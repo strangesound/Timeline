@@ -1,0 +1,56 @@
+@font-face {
+    font-family: "Plex";
+    font-weight: 700;
+    src: url("@/assets/fonts/IBMPlexSerif-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Plex";
+    font-weight: 300;
+    src: url("@/assets/fonts/IBMPlexSerif-Regular.ttf") format("truetype");
+}
+
+
+
+
+:root {
+    --black: #000;
+    --light: #ECEBEA;
+    --base-unit: 10.8;
+}
+
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    background-color: var(--black);
+    font-family: "Plex";
+    font-weight: 300;
+    font-size: 1.172vw;
+    line-height: 1.2;
+    text-align: center;
+    background-color: var(--light);
+    color: var(--black);
+}
+
+.date{
+    font-size: 2.3vw;
+}
+
+
+.v-enter-active,
+.v-leave-active {
+    transition: opacity .3s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+    opacity: 0;
+}
+

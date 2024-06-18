@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3513 311.83">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 50px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #b56e09;
+        font-family: IBMPlexSerif-Regular, 'IBM Plex Serif';
+      }
+
+      .cls-3 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-4 {
+        stroke-width: 0px;
+      }
+
+      .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 {
+        fill: none;
+      }
+
+      .cls-5 {
+        stroke-linecap: square;
+        stroke-width: 6px;
+      }
+
+      .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 {
+        stroke: #b56e09;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-6 {
+        stroke-width: 4px;
+      }
+
+      .cls-2 {
+        font-size: 35px;
+      }
+
+      .cls-8 {
+        stroke-width: 4.62px;
+      }
+
+      .cls-10 {
+        letter-spacing: -.1em;
+      }
+
+      .cls-11 {
+        letter-spacing: -.1em;
+      }
+
+      .cls-9 {
+        stroke-width: 5.54px;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-4" x="36.92" width="3439.71" height="311.83"/>
+    </clipPath>
+  </defs>
+  <g id="_Верхний_таймлайн_select" data-name="Верхний таймлайн select">
+    <g>
+      <image width="3513" height="159" transform="translate(0 76.59)" xlink:href="data:image/png;base64,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"/>
+      <g class="cls-3">
+        <line class="cls-6" x1="36.92" y1="199.11" x2="3476.64" y2="199.11"/>
+        <g>
+          <text class="cls-1" transform="translate(105.68 154.38)"><tspan x="0" y="0">1700 </tspan><tspan class="cls-11" x="131.6" y="0">г</tspan><tspan x="150.75" y="0">.</tspan></text>
+          <text class="cls-1" transform="translate(1086.62 154.38)"><tspan x="0" y="0">1800 </tspan><tspan class="cls-11" x="131.6" y="0">г</tspan><tspan x="150.75" y="0">.</tspan></text>
+          <text class="cls-2" transform="translate(620.35 154.38)"><tspan x="0" y="0">1750 </tspan><tspan class="cls-10" x="92.12" y="0">г</tspan><tspan x="105.52" y="0">.</tspan></text>
+          <text class="cls-2" transform="translate(1604.1 154.38)"><tspan x="0" y="0">1850 </tspan><tspan class="cls-10" x="92.12" y="0">г</tspan><tspan x="105.52" y="0">.</tspan></text>
+          <text class="cls-2" transform="translate(2587.85 154.38)"><tspan x="0" y="0">1950 </tspan><tspan class="cls-10" x="92.12" y="0">г</tspan><tspan x="105.52" y="0">.</tspan></text>
+          <text class="cls-1" transform="translate(2070.11 154.38)"><tspan x="0" y="0">1900 </tspan><tspan class="cls-11" x="131.6" y="0">г</tspan><tspan x="150.75" y="0">.</tspan></text>
+          <text class="cls-1" transform="translate(3054.64 154.38)"><tspan x="0" y="0">2000 </tspan><tspan class="cls-11" x="131.6" y="0">г</tspan><tspan x="150.75" y="0">.</tspan></text>
+        </g>
+        <g>
+          <line class="cls-5" x1="185.75" y1="172.63" x2="185.75" y2="197.63"/>
+          <line class="cls-5" x1="1169.41" y1="172.63" x2="1169.41" y2="197.63"/>
+          <line class="cls-5" x1="2153.06" y1="172.63" x2="2153.06" y2="197.63"/>
+          <line class="cls-5" x1="3136.71" y1="172.63" x2="3136.71" y2="197.63"/>
+        </g>
+        <g>
+          <line class="cls-9" x1="677.8" y1="172.42" x2="677.8" y2="197.42"/>
+          <line class="cls-9" x1="1661.55" y1="172.42" x2="1661.55" y2="197.42"/>
+          <line class="cls-9" x1="2645.3" y1="172.42" x2="2645.3" y2="197.42"/>
+        </g>
+        <g>
+          <line class="cls-8" x1="185.92" y1="177.61" x2="185.92" y2="197.61"/>
+          <line class="cls-8" x1="284.3" y1="177.61" x2="284.3" y2="197.61"/>
+          <line class="cls-8" x1="382.67" y1="177.61" x2="382.67" y2="197.61"/>
+          <line class="cls-8" x1="481.05" y1="177.61" x2="481.05" y2="197.61"/>
+          <line class="cls-8" x1="579.43" y1="177.61" x2="579.43" y2="197.61"/>
+          <line class="cls-8" x1="776.18" y1="177.61" x2="776.18" y2="197.61"/>
+          <line class="cls-8" x1="874.55" y1="177.61" x2="874.55" y2="197.61"/>
+          <line class="cls-8" x1="972.93" y1="177.61" x2="972.93" y2="197.61"/>
+          <line class="cls-8" x1="1071.3" y1="177.61" x2="1071.3" y2="197.61"/>
+          <line class="cls-8" x1="1169.68" y1="177.61" x2="1169.68" y2="197.61"/>
+          <line class="cls-8" x1="1268.05" y1="177.61" x2="1268.05" y2="197.61"/>
+          <line class="cls-8" x1="1366.43" y1="177.61" x2="1366.43" y2="197.61"/>
+          <line class="cls-8" x1="1464.8" y1="177.61" x2="1464.8" y2="197.61"/>
+          <line class="cls-8" x1="1563.18" y1="177.61" x2="1563.18" y2="197.61"/>
+          <line class="cls-8" x1="1759.93" y1="177.61" x2="1759.93" y2="197.61"/>
+          <line class="cls-8" x1="1858.3" y1="177.61" x2="1858.3" y2="197.61"/>
+          <line class="cls-8" x1="1956.68" y1="177.61" x2="1956.68" y2="197.61"/>
+          <line class="cls-8" x1="2055.05" y1="177.61" x2="2055.05" y2="197.61"/>
+          <line class="cls-8" x1="2153.43" y1="177.61" x2="2153.43" y2="197.61"/>
+          <line class="cls-8" x1="2251.8" y1="177.61" x2="2251.8" y2="197.61"/>
+          <line class="cls-8" x1="2350.18" y1="177.61" x2="2350.18" y2="197.61"/>
+          <line class="cls-8" x1="2448.55" y1="177.61" x2="2448.55" y2="197.61"/>
+          <line class="cls-8" x1="2546.93" y1="177.61" x2="2546.93" y2="197.61"/>
+          <line class="cls-8" x1="2743.68" y1="177.61" x2="2743.68" y2="197.61"/>
+          <line class="cls-8" x1="2842.05" y1="177.61" x2="2842.05" y2="197.61"/>
+          <line class="cls-8" x1="2940.43" y1="177.61" x2="2940.43" y2="197.61"/>
+          <line class="cls-8" x1="3038.8" y1="177.61" x2="3038.8" y2="197.61"/>
+          <line class="cls-8" x1="3137.18" y1="177.61" x2="3137.18" y2="197.61"/>
+          <line class="cls-8" x1="3235.55" y1="177.61" x2="3235.55" y2="197.61"/>
+          <line class="cls-8" x1="3333.93" y1="177.61" x2="3333.93" y2="197.61"/>
+        </g>
+        <g>
+          <line class="cls-7" x1="87.55" y1="183.94" x2="87.55" y2="198.94"/>
+          <line class="cls-7" x1="97.39" y1="183.94" x2="97.39" y2="198.94"/>
+          <line class="cls-7" x1="107.22" y1="183.94" x2="107.22" y2="198.94"/>
+          <line class="cls-7" x1="117.06" y1="183.94" x2="117.06" y2="198.94"/>
+          <line class="cls-7" x1="126.9" y1="183.94" x2="126.9" y2="198.94"/>
+          <line class="cls-7" x1="136.74" y1="183.94" x2="136.74" y2="198.94"/>
+          <line class="cls-7" x1="146.57" y1="183.94" x2="146.57" y2="198.94"/>
+          <line class="cls-7" x1="156.41" y1="183.94" x2="156.41" y2="198.94"/>
+          <line class="cls-7" x1="166.25" y1="183.94" x2="166.25" y2="198.94"/>
+          <line class="cls-7" x1="176.09" y1="183.94" x2="176.09" y2="198.94"/>
+          <line class="cls-7" x1="185.92" y1="183.94" x2="185.92" y2="198.94"/>
+          <line class="cls-7" x1="195.76" y1="183.94" x2="195.76" y2="198.94"/>
+          <line class="cls-7" x1="205.6" y1="183.94" x2="205.6" y2="198.94"/>
+          <line class="cls-7" x1="215.44" y1="183.94" x2="215.44" y2="198.94"/>
+          <line class="cls-7" x1="225.27" y1="183.94" x2="225.27" y2="198.94"/>
+          <line class="cls-7" x1="235.11" y1="183.94" x2="235.11" y2="198.94"/>
+          <line class="cls-7" x1="244.95" y1="183.94" x2="244.95" y2="198.94"/>
+          <line class="cls-7" x1="254.79" y1="183.94" x2="254.79" y2="198.94"/>
+          <line class="cls-7" x1="264.62" y1="183.94" x2="264.62" y2="198.94"/>
+          <line class="cls-7" x1="274.46" y1="183.94" x2="274.46" y2="198.94"/>
+          <line class="cls-7" x1="284.3" y1="183.94" x2="284.3" y2="198.94"/>
+          <line class="cls-7" x1="294.14" y1="183.94" x2="294.14" y2="198.94"/>
+          <line class="cls-7" x1="303.97" y1="183.94" x2="303.97" y2="198.94"/>
+          <line class="cls-7" x1="313.81" y1="183.94" x2="313.81" y2="198.94"/>
+          <line class="cls-7" x1="323.65" y1="183.94" x2="323.65" y2="198.94"/>
+          <line class="cls-7" x1="333.49" y1="183.94" x2="333.49" y2="198.94"/>
+          <line class="cls-7" x1="343.32" y1="183.94" x2="343.32" y2="198.94"/>
+          <line class="cls-7" x1="353.16" y1="183.94" x2="353.16" y2="198.94"/>
+          <line class="cls-7" x1="363" y1="183.94" x2="363" y2="198.94"/>
+          <line class="cls-7" x1="372.84" y1="183.94" x2="372.84" y2="198.94"/>
+          <line class="cls-7" x1="382.67" y1="183.94" x2="382.67" y2="198.94"/>
+          <line class="cls-7" x1="392.51" y1="183.94" x2="392.51" y2="198.94"/>
+          <line class="cls-7" x1="402.35" y1="183.94" x2="402.35" y2="198.94"/>
+          <line class="cls-7" x1="412.19" y1="183.94" x2="412.19" y2="198.94"/>
+          <line class="cls-7" x1="422.02" y1="183.94" x2="422.02" y2="198.94"/>
+          <line class="cls-7" x1="431.86" y1="183.94" x2="431.86" y2="198.94"/>
+          <line class="cls-7" x1="441.7" y1="183.94" x2="441.7" y2="198.94"/>
+          <line class="cls-7" x1="451.54" y1="183.94" x2="451.54" y2="198.94"/>
+          <line class="cls-7" x1="461.37" y1="183.94" x2="461.37" y2="198.94"/>
+          <line class="cls-7" x1="471.21" y1="183.94" x2="471.21" y2="198.94"/>
+          <line class="cls-7" x1="481.05" y1="183.94" x2="481.05" y2="198.94"/>
+          <line class="cls-7" x1="490.89" y1="183.94" x2="490.89" y2="198.94"/>
+          <line class="cls-7" x1="500.72" y1="183.94" x2="500.72" y2="198.94"/>
+          <line class="cls-7" x1="510.56" y1="183.94" x2="510.56" y2="198.94"/>
+          <line class="cls-7" x1="520.4" y1="183.94" x2="520.4" y2="198.94"/>
+          <line class="cls-7" x1="530.24" y1="183.94" x2="530.24" y2="198.94"/>
+          <line class="cls-7" x1="540.07" y1="183.94" x2="540.07" y2="198.94"/>
+          <line class="cls-7" x1="549.91" y1="183.94" x2="549.91" y2="198.94"/>
+          <line class="cls-7" x1="559.75" y1="183.94" x2="559.75" y2="198.94"/>
+          <line class="cls-7" x1="569.59" y1="183.94" x2="569.59" y2="198.94"/>
+          <line class="cls-7" x1="579.43" y1="183.94" x2="579.43" y2="198.94"/>
+          <line class="cls-7" x1="589.26" y1="183.94" x2="589.26" y2="198.94"/>
+          <line class="cls-7" x1="599.1" y1="183.94" x2="599.1" y2="198.94"/>
+          <line class="cls-7" x1="608.94" y1="183.94" x2="608.94" y2="198.94"/>
+          <line class="cls-7" x1="618.78" y1="183.94" x2="618.78" y2="198.94"/>
+          <line class="cls-7" x1="628.61" y1="183.94" x2="628.61" y2="198.94"/>
+          <line class="cls-7" x1="638.45" y1="183.94" x2="638.45" y2="198.94"/>
+          <line class="cls-7" x1="648.29" y1="183.94" x2="648.29" y2="198.94"/>
+          <line class="cls-7" x1="658.13" y1="183.94" x2="658.13" y2="198.94"/>
+          <line class="cls-7" x1="667.96" y1="183.94" x2="667.96" y2="198.94"/>
+          <line class="cls-7" x1="677.8" y1="183.94" x2="677.8" y2="198.94"/>
+          <line class="cls-7" x1="687.64" y1="183.94" x2="687.64" y2="198.94"/>
+          <line class="cls-7" x1="697.48" y1="183.94" x2="697.48" y2="198.94"/>
+          <line class="cls-7" x1="707.31" y1="183.94" x2="707.31" y2="198.94"/>
+          <line class="cls-7" x1="717.15" y1="183.94" x2="717.15" y2="198.94"/>
+          <line class="cls-7" x1="726.99" y1="183.94" x2="726.99" y2="198.94"/>
+          <line class="cls-7" x1="736.83" y1="183.94" x2="736.83" y2="198.94"/>
+          <line class="cls-7" x1="746.66" y1="183.94" x2="746.66" y2="198.94"/>
+          <line class="cls-7" x1="756.5" y1="183.94" x2="756.5" y2="198.94"/>
+          <line class="cls-7" x1="766.34" y1="183.94" x2="766.34" y2="198.94"/>
+          <line class="cls-7" x1="776.18" y1="183.94" x2="776.18" y2="198.94"/>
+          <line class="cls-7" x1="786.01" y1="183.94" x2="786.01" y2="198.94"/>
+          <line class="cls-7" x1="795.85" y1="183.94" x2="795.85" y2="198.94"/>
+          <line class="cls-7" x1="805.69" y1="183.94" x2="805.69" y2="198.94"/>
+          <line class="cls-7" x1="815.53" y1="183.94" x2="815.53" y2="198.94"/>
+          <line class="cls-7" x1="825.36" y1="183.94" x2="825.36" y2="198.94"/>
+          <line class="cls-7" x1="835.2" y1="183.94" x2="835.2" y2="198.94"/>
+          <line class="cls-7" x1="845.04" y1="183.94" x2="845.04" y2="198.94"/>
+          <line class="cls-7" x1="854.88" y1="183.94" x2="854.88" y2="198.94"/>
+          <line class="cls-7" x1="864.71" y1="183.94" x2="864.71" y2="198.94"/>
+          <line class="cls-7" x1="874.55" y1="183.94" x2="874.55" y2="198.94"/>
+          <line class="cls-7" x1="884.39" y1="183.94" x2="884.39" y2="198.94"/>
+          <line class="cls-7" x1="894.23" y1="183.94" x2="894.23" y2="198.94"/>
+          <line class="cls-7" x1="904.06" y1="183.94" x2="904.06" y2="198.94"/>
+          <line class="cls-7" x1="913.9" y1="183.94" x2="913.9" y2="198.94"/>
+          <line class="cls-7" x1="923.74" y1="183.94" x2="923.74" y2="198.94"/>
+          <line class="cls-7" x1="933.58" y1="183.94" x2="933.58" y2="198.94"/>
+          <line class="cls-7" x1="943.41" y1="183.94" x2="943.41" y2="198.94"/>
+          <line class="cls-7" x1="953.25" y1="183.94" x2="953.25" y2="198.94"/>
+          <line class="cls-7" x1="963.09" y1="183.94" x2="963.09" y2="198.94"/>
+          <line class="cls-7" x1="972.93" y1="183.94" x2="972.93" y2="198.94"/>
+          <line class="cls-7" x1="982.76" y1="183.94" x2="982.76" y2="198.94"/>
+          <line class="cls-7" x1="992.6" y1="183.94" x2="992.6" y2="198.94"/>
+          <line class="cls-7" x1="1002.44" y1="183.94" x2="1002.44" y2="198.94"/>
+          <line class="cls-7" x1="1012.28" y1="183.94" x2="1012.28" y2="198.94"/>
+          <line class="cls-7" x1="1022.11" y1="183.94" x2="1022.11" y2="198.94"/>
+          <line class="cls-7" x1="1031.95" y1="183.94" x2="1031.95" y2="198.94"/>
+          <line class="cls-7" x1="1041.79" y1="183.94" x2="1041.79" y2="198.94"/>
+          <line class="cls-7" x1="1051.63" y1="183.94" x2="1051.63" y2="198.94"/>
+          <line class="cls-7" x1="1061.46" y1="183.94" x2="1061.46" y2="198.94"/>
+          <line class="cls-7" x1="1071.3" y1="183.94" x2="1071.3" y2="198.94"/>
+          <line class="cls-7" x1="1081.14" y1="183.94" x2="1081.14" y2="198.94"/>
+          <line class="cls-7" x1="1090.98" y1="183.94" x2="1090.98" y2="198.94"/>
+          <line class="cls-7" x1="1100.81" y1="183.94" x2="1100.81" y2="198.94"/>
+          <line class="cls-7" x1="1110.65" y1="183.94" x2="1110.65" y2="198.94"/>
+          <line class="cls-7" x1="1120.49" y1="183.94" x2="1120.49" y2="198.94"/>
+          <line class="cls-7" x1="1130.33" y1="183.94" x2="1130.33" y2="198.94"/>
+          <line class="cls-7" x1="1140.16" y1="183.94" x2="1140.16" y2="198.94"/>
+          <line class="cls-7" x1="1150" y1="183.94" x2="1150" y2="198.94"/>
+          <line class="cls-7" x1="1159.84" y1="183.94" x2="1159.84" y2="198.94"/>
+          <line class="cls-7" x1="1169.68" y1="183.94" x2="1169.68" y2="198.94"/>
+          <line class="cls-7" x1="1179.51" y1="183.94" x2="1179.51" y2="198.94"/>
+          <line class="cls-7" x1="1189.35" y1="183.94" x2="1189.35" y2="198.94"/>
+          <line class="cls-7" x1="1199.19" y1="183.94" x2="1199.19" y2="198.94"/>
+          <line class="cls-7" x1="1209.03" y1="183.94" x2="1209.03" y2="198.94"/>
+          <line class="cls-7" x1="1218.86" y1="183.94" x2="1218.86" y2="198.94"/>
+          <line class="cls-7" x1="1228.7" y1="183.94" x2="1228.7" y2="198.94"/>
+          <line class="cls-7" x1="1238.54" y1="183.94" x2="1238.54" y2="198.94"/>
+          <line class="cls-7" x1="1248.38" y1="183.94" x2="1248.38" y2="198.94"/>
+          <line class="cls-7" x1="1258.21" y1="183.94" x2="1258.21" y2="198.94"/>
+          <line class="cls-7" x1="1268.05" y1="183.94" x2="1268.05" y2="198.94"/>
+          <line class="cls-7" x1="1277.89" y1="183.94" x2="1277.89" y2="198.94"/>
+          <line class="cls-7" x1="1287.73" y1="183.94" x2="1287.73" y2="198.94"/>
+          <line class="cls-7" x1="1297.56" y1="183.94" x2="1297.56" y2="198.94"/>
+          <line class="cls-7" x1="1307.4" y1="183.94" x2="1307.4" y2="198.94"/>
+          <line class="cls-7" x1="1317.24" y1="183.94" x2="1317.24" y2="198.94"/>
+          <line class="cls-7" x1="1327.08" y1="183.94" x2="1327.08" y2="198.94"/>
+          <line class="cls-7" x1="1336.91" y1="183.94" x2="1336.91" y2="198.94"/>
+          <line class="cls-7" x1="1346.75" y1="183.94" x2="1346.75" y2="198.94"/>
+          <line class="cls-7" x1="1356.59" y1="183.94" x2="1356.59" y2="198.94"/>
+          <line class="cls-7" x1="1366.43" y1="183.94" x2="1366.43" y2="198.94"/>
+          <line class="cls-7" x1="1376.26" y1="183.94" x2="1376.26" y2="198.94"/>
+          <line class="cls-7" x1="1386.1" y1="183.94" x2="1386.1" y2="198.94"/>
+          <line class="cls-7" x1="1395.94" y1="183.94" x2="1395.94" y2="198.94"/>
+          <line class="cls-7" x1="1405.78" y1="183.94" x2="1405.78" y2="198.94"/>
+          <line class="cls-7" x1="1415.61" y1="183.94" x2="1415.61" y2="198.94"/>
+          <line class="cls-7" x1="1425.45" y1="183.94" x2="1425.45" y2="198.94"/>
+          <line class="cls-7" x1="1435.29" y1="183.94" x2="1435.29" y2="198.94"/>
+          <line class="cls-7" x1="1445.13" y1="183.94" x2="1445.13" y2="198.94"/>
+          <line class="cls-7" x1="1454.96" y1="183.94" x2="1454.96" y2="198.94"/>
+          <line class="cls-7" x1="1464.8" y1="183.94" x2="1464.8" y2="198.94"/>
+          <line class="cls-7" x1="1474.64" y1="183.94" x2="1474.64" y2="198.94"/>
+          <line class="cls-7" x1="1484.48" y1="183.94" x2="1484.48" y2="198.94"/>
+          <line class="cls-7" x1="1494.31" y1="183.94" x2="1494.31" y2="198.94"/>
+          <line class="cls-7" x1="1504.15" y1="183.94" x2="1504.15" y2="198.94"/>
+          <line class="cls-7" x1="1513.99" y1="183.94" x2="1513.99" y2="198.94"/>
+          <line class="cls-7" x1="1523.83" y1="183.94" x2="1523.83" y2="198.94"/>
+          <line class="cls-7" x1="1533.66" y1="183.94" x2="1533.66" y2="198.94"/>
+          <line class="cls-7" x1="1543.5" y1="183.94" x2="1543.5" y2="198.94"/>
+          <line class="cls-7" x1="1553.34" y1="183.94" x2="1553.34" y2="198.94"/>
+          <line class="cls-7" x1="1563.18" y1="183.94" x2="1563.18" y2="198.94"/>
+          <line class="cls-7" x1="1573.01" y1="183.94" x2="1573.01" y2="198.94"/>
+          <line class="cls-7" x1="1582.85" y1="183.94" x2="1582.85" y2="198.94"/>
+          <line class="cls-7" x1="1592.69" y1="183.94" x2="1592.69" y2="198.94"/>
+          <line class="cls-7" x1="1602.53" y1="183.94" x2="1602.53" y2="198.94"/>
+          <line class="cls-7" x1="1612.36" y1="183.94" x2="1612.36" y2="198.94"/>
+          <line class="cls-7" x1="1622.2" y1="183.94" x2="1622.2" y2="198.94"/>
+          <line class="cls-7" x1="1632.04" y1="183.94" x2="1632.04" y2="198.94"/>
+          <line class="cls-7" x1="1641.88" y1="183.94" x2="1641.88" y2="198.94"/>
+          <line class="cls-7" x1="1651.71" y1="183.94" x2="1651.71" y2="198.94"/>
+          <line class="cls-7" x1="1661.55" y1="183.94" x2="1661.55" y2="198.94"/>
+          <line class="cls-7" x1="1671.39" y1="183.94" x2="1671.39" y2="198.94"/>
+          <line class="cls-7" x1="1681.23" y1="183.94" x2="1681.23" y2="198.94"/>
+          <line class="cls-7" x1="1691.06" y1="183.94" x2="1691.06" y2="198.94"/>
+          <line class="cls-7" x1="1700.9" y1="183.94" x2="1700.9" y2="198.94"/>
+          <line class="cls-7" x1="1710.74" y1="183.94" x2="1710.74" y2="198.94"/>
+          <line class="cls-7" x1="1720.58" y1="183.94" x2="1720.58" y2="198.94"/>
+          <line class="cls-7" x1="1730.41" y1="183.94" x2="1730.41" y2="198.94"/>
+          <line class="cls-7" x1="1740.25" y1="183.94" x2="1740.25" y2="198.94"/>
+          <line class="cls-7" x1="1750.09" y1="183.94" x2="1750.09" y2="198.94"/>
+          <line class="cls-7" x1="1759.93" y1="183.94" x2="1759.93" y2="198.94"/>
+          <line class="cls-7" x1="1769.76" y1="183.94" x2="1769.76" y2="198.94"/>
+          <line class="cls-7" x1="1779.6" y1="183.94" x2="1779.6" y2="198.94"/>
+          <line class="cls-7" x1="1789.44" y1="183.94" x2="1789.44" y2="198.94"/>
+          <line class="cls-7" x1="1799.28" y1="183.94" x2="1799.28" y2="198.94"/>
+          <line class="cls-7" x1="1809.11" y1="183.94" x2="1809.11" y2="198.94"/>
+          <line class="cls-7" x1="1818.95" y1="183.94" x2="1818.95" y2="198.94"/>
+          <line class="cls-7" x1="1828.79" y1="183.94" x2="1828.79" y2="198.94"/>
+          <line class="cls-7" x1="1838.63" y1="183.94" x2="1838.63" y2="198.94"/>
+          <line class="cls-7" x1="1848.46" y1="183.94" x2="1848.46" y2="198.94"/>
+          <line class="cls-7" x1="1858.3" y1="183.94" x2="1858.3" y2="198.94"/>
+          <line class="cls-7" x1="1868.14" y1="183.94" x2="1868.14" y2="198.94"/>
+          <line class="cls-7" x1="1877.98" y1="183.94" x2="1877.98" y2="198.94"/>
+          <line class="cls-7" x1="1887.81" y1="183.94" x2="1887.81" y2="198.94"/>
+          <line class="cls-7" x1="1897.65" y1="183.94" x2="1897.65" y2="198.94"/>
+          <line class="cls-7" x1="1907.49" y1="183.94" x2="1907.49" y2="198.94"/>
+          <line class="cls-7" x1="1917.33" y1="183.94" x2="1917.33" y2="198.94"/>
+          <line class="cls-7" x1="1927.16" y1="183.94" x2="1927.16" y2="198.94"/>
+          <line class="cls-7" x1="1937" y1="183.94" x2="1937" y2="198.94"/>
+          <line class="cls-7" x1="1946.84" y1="183.94" x2="1946.84" y2="198.94"/>
+          <line class="cls-7" x1="1956.68" y1="183.94" x2="1956.68" y2="198.94"/>
+          <line class="cls-7" x1="1966.51" y1="183.94" x2="1966.51" y2="198.94"/>
+          <line class="cls-7" x1="1976.35" y1="183.94" x2="1976.35" y2="198.94"/>
+          <line class="cls-7" x1="1986.19" y1="183.94" x2="1986.19" y2="198.94"/>
+          <line class="cls-7" x1="1996.03" y1="183.94" x2="1996.03" y2="198.94"/>
+          <line class="cls-7" x1="2005.86" y1="183.94" x2="2005.86" y2="198.94"/>
+          <line class="cls-7" x1="2015.7" y1="183.94" x2="2015.7" y2="198.94"/>
+          <line class="cls-7" x1="2025.54" y1="183.94" x2="2025.54" y2="198.94"/>
+          <line class="cls-7" x1="2035.38" y1="183.94" x2="2035.38" y2="198.94"/>
+          <line class="cls-7" x1="2045.21" y1="183.94" x2="2045.21" y2="198.94"/>
+          <line class="cls-7" x1="2055.05" y1="183.94" x2="2055.05" y2="198.94"/>
+          <line class="cls-7" x1="2064.89" y1="183.94" x2="2064.89" y2="198.94"/>
+          <line class="cls-7" x1="2074.73" y1="183.94" x2="2074.73" y2="198.94"/>
+          <line class="cls-7" x1="2084.56" y1="183.94" x2="2084.56" y2="198.94"/>
+          <line class="cls-7" x1="2094.4" y1="183.94" x2="2094.4" y2="198.94"/>
+          <line class="cls-7" x1="2104.24" y1="183.94" x2="2104.24" y2="198.94"/>
+          <line class="cls-7" x1="2114.08" y1="183.94" x2="2114.08" y2="198.94"/>
+          <line class="cls-7" x1="2123.92" y1="183.94" x2="2123.92" y2="198.94"/>
+          <line class="cls-7" x1="2133.75" y1="183.94" x2="2133.75" y2="198.94"/>
+          <line class="cls-7" x1="2143.59" y1="183.94" x2="2143.59" y2="198.94"/>
+          <line class="cls-7" x1="2153.43" y1="183.94" x2="2153.43" y2="198.94"/>
+          <line class="cls-7" x1="2163.27" y1="183.94" x2="2163.27" y2="198.94"/>
+          <line class="cls-7" x1="2173.1" y1="183.94" x2="2173.1" y2="198.94"/>
+          <line class="cls-7" x1="2182.94" y1="183.94" x2="2182.94" y2="198.94"/>
+          <line class="cls-7" x1="2192.78" y1="183.94" x2="2192.78" y2="198.94"/>
+          <line class="cls-7" x1="2202.62" y1="183.94" x2="2202.62" y2="198.94"/>
+          <line class="cls-7" x1="2212.45" y1="183.94" x2="2212.45" y2="198.94"/>
+          <line class="cls-7" x1="2222.29" y1="183.94" x2="2222.29" y2="198.94"/>
+          <line class="cls-7" x1="2232.13" y1="183.94" x2="2232.13" y2="198.94"/>
+          <line class="cls-7" x1="2241.97" y1="183.94" x2="2241.97" y2="198.94"/>
+          <line class="cls-7" x1="2251.8" y1="183.94" x2="2251.8" y2="198.94"/>
+          <line class="cls-7" x1="2261.64" y1="183.94" x2="2261.64" y2="198.94"/>
+          <line class="cls-7" x1="2271.48" y1="183.94" x2="2271.48" y2="198.94"/>
+          <line class="cls-7" x1="2281.32" y1="183.94" x2="2281.32" y2="198.94"/>
+          <line class="cls-7" x1="2291.15" y1="183.94" x2="2291.15" y2="198.94"/>
+          <line class="cls-7" x1="2300.99" y1="183.94" x2="2300.99" y2="198.94"/>
+          <line class="cls-7" x1="2310.83" y1="183.94" x2="2310.83" y2="198.94"/>
+          <line class="cls-7" x1="2320.67" y1="183.94" x2="2320.67" y2="198.94"/>
+          <line class="cls-7" x1="2330.5" y1="183.94" x2="2330.5" y2="198.94"/>
+          <line class="cls-7" x1="2340.34" y1="183.94" x2="2340.34" y2="198.94"/>
+          <line class="cls-7" x1="2350.18" y1="183.94" x2="2350.18" y2="198.94"/>
+          <line class="cls-7" x1="2360.02" y1="183.94" x2="2360.02" y2="198.94"/>
+          <line class="cls-7" x1="2369.85" y1="183.94" x2="2369.85" y2="198.94"/>
+          <line class="cls-7" x1="2379.69" y1="183.94" x2="2379.69" y2="198.94"/>
+          <line class="cls-7" x1="2389.53" y1="183.94" x2="2389.53" y2="198.94"/>
+          <line class="cls-7" x1="2399.37" y1="183.94" x2="2399.37" y2="198.94"/>
+          <line class="cls-7" x1="2409.2" y1="183.94" x2="2409.2" y2="198.94"/>
+          <line class="cls-7" x1="2419.04" y1="183.94" x2="2419.04" y2="198.94"/>
+          <line class="cls-7" x1="2428.88" y1="183.94" x2="2428.88" y2="198.94"/>
+          <line class="cls-7" x1="2438.72" y1="183.94" x2="2438.72" y2="198.94"/>
+          <line class="cls-7" x1="2448.55" y1="183.94" x2="2448.55" y2="198.94"/>
+          <line class="cls-7" x1="2458.39" y1="183.94" x2="2458.39" y2="198.94"/>
+          <line class="cls-7" x1="2468.23" y1="183.94" x2="2468.23" y2="198.94"/>
+          <line class="cls-7" x1="2478.07" y1="183.94" x2="2478.07" y2="198.94"/>
+          <line class="cls-7" x1="2487.9" y1="183.94" x2="2487.9" y2="198.94"/>
+          <line class="cls-7" x1="2497.74" y1="183.94" x2="2497.74" y2="198.94"/>
+          <line class="cls-7" x1="2507.58" y1="183.94" x2="2507.58" y2="198.94"/>
+          <line class="cls-7" x1="2517.42" y1="183.94" x2="2517.42" y2="198.94"/>
+          <line class="cls-7" x1="2527.25" y1="183.94" x2="2527.25" y2="198.94"/>
+          <line class="cls-7" x1="2537.09" y1="183.94" x2="2537.09" y2="198.94"/>
+          <line class="cls-7" x1="2546.93" y1="183.94" x2="2546.93" y2="198.94"/>
+          <line class="cls-7" x1="2556.77" y1="183.94" x2="2556.77" y2="198.94"/>
+          <line class="cls-7" x1="2566.6" y1="183.94" x2="2566.6" y2="198.94"/>
+          <line class="cls-7" x1="2576.44" y1="183.94" x2="2576.44" y2="198.94"/>
+          <line class="cls-7" x1="2586.28" y1="183.94" x2="2586.28" y2="198.94"/>
+          <line class="cls-7" x1="2596.12" y1="183.94" x2="2596.12" y2="198.94"/>
+          <line class="cls-7" x1="2605.95" y1="183.94" x2="2605.95" y2="198.94"/>
+          <line class="cls-7" x1="2615.79" y1="183.94" x2="2615.79" y2="198.94"/>
+          <line class="cls-7" x1="2625.63" y1="183.94" x2="2625.63" y2="198.94"/>
+          <line class="cls-7" x1="2635.47" y1="183.94" x2="2635.47" y2="198.94"/>
+          <line class="cls-7" x1="2645.3" y1="183.94" x2="2645.3" y2="198.94"/>
+          <line class="cls-7" x1="2655.14" y1="183.94" x2="2655.14" y2="198.94"/>
+          <line class="cls-7" x1="2664.98" y1="183.94" x2="2664.98" y2="198.94"/>
+          <line class="cls-7" x1="2674.82" y1="183.94" x2="2674.82" y2="198.94"/>
+          <line class="cls-7" x1="2684.65" y1="183.94" x2="2684.65" y2="198.94"/>
+          <line class="cls-7" x1="2694.49" y1="183.94" x2="2694.49" y2="198.94"/>
+          <line class="cls-7" x1="2704.33" y1="183.94" x2="2704.33" y2="198.94"/>
+          <line class="cls-7" x1="2714.17" y1="183.94" x2="2714.17" y2="198.94"/>
+          <line class="cls-7" x1="2724" y1="183.94" x2="2724" y2="198.94"/>
+          <line class="cls-7" x1="2733.84" y1="183.94" x2="2733.84" y2="198.94"/>
+          <line class="cls-7" x1="2743.68" y1="183.94" x2="2743.68" y2="198.94"/>
+          <line class="cls-7" x1="2753.52" y1="183.94" x2="2753.52" y2="198.94"/>
+          <line class="cls-7" x1="2763.35" y1="183.94" x2="2763.35" y2="198.94"/>
+          <line class="cls-7" x1="2773.19" y1="183.94" x2="2773.19" y2="198.94"/>
+          <line class="cls-7" x1="2783.03" y1="183.94" x2="2783.03" y2="198.94"/>
+          <line class="cls-7" x1="2792.87" y1="183.94" x2="2792.87" y2="198.94"/>
+          <line class="cls-7" x1="2802.7" y1="183.94" x2="2802.7" y2="198.94"/>
+          <line class="cls-7" x1="2812.54" y1="183.94" x2="2812.54" y2="198.94"/>
+          <line class="cls-7" x1="2822.38" y1="183.94" x2="2822.38" y2="198.94"/>
+          <line class="cls-7" x1="2832.22" y1="183.94" x2="2832.22" y2="198.94"/>
+          <line class="cls-7" x1="2842.05" y1="183.94" x2="2842.05" y2="198.94"/>
+          <line class="cls-7" x1="2851.89" y1="183.94" x2="2851.89" y2="198.94"/>
+          <line class="cls-7" x1="2861.73" y1="183.94" x2="2861.73" y2="198.94"/>
+          <line class="cls-7" x1="2871.57" y1="183.94" x2="2871.57" y2="198.94"/>
+          <line class="cls-7" x1="2881.4" y1="183.94" x2="2881.4" y2="198.94"/>
+          <line class="cls-7" x1="2891.24" y1="183.94" x2="2891.24" y2="198.94"/>
+          <line class="cls-7" x1="2901.08" y1="183.94" x2="2901.08" y2="198.94"/>
+          <line class="cls-7" x1="2910.92" y1="183.94" x2="2910.92" y2="198.94"/>
+          <line class="cls-7" x1="2920.75" y1="183.94" x2="2920.75" y2="198.94"/>
+          <line class="cls-7" x1="2930.59" y1="183.94" x2="2930.59" y2="198.94"/>
+          <line class="cls-7" x1="2940.43" y1="183.94" x2="2940.43" y2="198.94"/>
+          <line class="cls-7" x1="2950.27" y1="183.94" x2="2950.27" y2="198.94"/>
+          <line class="cls-7" x1="2960.1" y1="183.94" x2="2960.1" y2="198.94"/>
+          <line class="cls-7" x1="2969.94" y1="183.94" x2="2969.94" y2="198.94"/>
+          <line class="cls-7" x1="2979.78" y1="183.94" x2="2979.78" y2="198.94"/>
+          <line class="cls-7" x1="2989.62" y1="183.94" x2="2989.62" y2="198.94"/>
+          <line class="cls-7" x1="2999.45" y1="183.94" x2="2999.45" y2="198.94"/>
+          <line class="cls-7" x1="3009.29" y1="183.94" x2="3009.29" y2="198.94"/>
+          <line class="cls-7" x1="3019.13" y1="183.94" x2="3019.13" y2="198.94"/>
+          <line class="cls-7" x1="3028.97" y1="183.94" x2="3028.97" y2="198.94"/>
+          <line class="cls-7" x1="3038.8" y1="183.94" x2="3038.8" y2="198.94"/>
+          <line class="cls-7" x1="3048.64" y1="183.94" x2="3048.64" y2="198.94"/>
+          <line class="cls-7" x1="3058.48" y1="183.94" x2="3058.48" y2="198.94"/>
+          <line class="cls-7" x1="3068.32" y1="183.94" x2="3068.32" y2="198.94"/>
+          <line class="cls-7" x1="3078.15" y1="183.94" x2="3078.15" y2="198.94"/>
+          <line class="cls-7" x1="3087.99" y1="183.94" x2="3087.99" y2="198.94"/>
+          <line class="cls-7" x1="3097.83" y1="183.94" x2="3097.83" y2="198.94"/>
+          <line class="cls-7" x1="3107.67" y1="183.94" x2="3107.67" y2="198.94"/>
+          <line class="cls-7" x1="3117.5" y1="183.94" x2="3117.5" y2="198.94"/>
+          <line class="cls-7" x1="3127.34" y1="183.94" x2="3127.34" y2="198.94"/>
+          <line class="cls-7" x1="3137.18" y1="183.94" x2="3137.18" y2="198.94"/>
+          <line class="cls-7" x1="3147.02" y1="183.94" x2="3147.02" y2="198.94"/>
+          <line class="cls-7" x1="3156.85" y1="183.94" x2="3156.85" y2="198.94"/>
+          <line class="cls-7" x1="3166.69" y1="183.94" x2="3166.69" y2="198.94"/>
+          <line class="cls-7" x1="3176.53" y1="183.94" x2="3176.53" y2="198.94"/>
+          <line class="cls-7" x1="3186.37" y1="183.94" x2="3186.37" y2="198.94"/>
+          <line class="cls-7" x1="3196.2" y1="183.94" x2="3196.2" y2="198.94"/>
+          <line class="cls-7" x1="3206.04" y1="183.94" x2="3206.04" y2="198.94"/>
+          <line class="cls-7" x1="3215.88" y1="183.94" x2="3215.88" y2="198.94"/>
+          <line class="cls-7" x1="3225.72" y1="183.94" x2="3225.72" y2="198.94"/>
+          <line class="cls-7" x1="3235.55" y1="183.94" x2="3235.55" y2="198.94"/>
+          <line class="cls-7" x1="3245.39" y1="183.94" x2="3245.39" y2="198.94"/>
+          <line class="cls-7" x1="3255.23" y1="183.94" x2="3255.23" y2="198.94"/>
+          <line class="cls-7" x1="3265.07" y1="183.94" x2="3265.07" y2="198.94"/>
+          <line class="cls-7" x1="3274.9" y1="183.94" x2="3274.9" y2="198.94"/>
+          <line class="cls-7" x1="3284.74" y1="183.94" x2="3284.74" y2="198.94"/>
+          <line class="cls-7" x1="3294.58" y1="183.94" x2="3294.58" y2="198.94"/>
+          <line class="cls-7" x1="3304.42" y1="183.94" x2="3304.42" y2="198.94"/>
+          <line class="cls-7" x1="3314.25" y1="183.94" x2="3314.25" y2="198.94"/>
+          <line class="cls-7" x1="3324.09" y1="183.94" x2="3324.09" y2="198.94"/>
+          <line class="cls-7" x1="3333.93" y1="183.94" x2="3333.93" y2="198.94"/>
+          <line class="cls-7" x1="3343.77" y1="183.94" x2="3343.77" y2="198.94"/>
+          <line class="cls-7" x1="3353.6" y1="183.94" x2="3353.6" y2="198.94"/>
+          <line class="cls-7" x1="3363.44" y1="183.94" x2="3363.44" y2="198.94"/>
+          <line class="cls-7" x1="3373.28" y1="183.94" x2="3373.28" y2="198.94"/>
+          <line class="cls-7" x1="3383.12" y1="183.94" x2="3383.12" y2="198.94"/>
+          <line class="cls-7" x1="3392.95" y1="183.94" x2="3392.95" y2="198.94"/>
+          <line class="cls-7" x1="3402.79" y1="183.94" x2="3402.79" y2="198.94"/>
+          <line class="cls-7" x1="3412.63" y1="183.94" x2="3412.63" y2="198.94"/>
+          <line class="cls-7" x1="3422.47" y1="183.94" x2="3422.47" y2="198.94"/>
+          <line class="cls-7" x1="3432.3" y1="183.94" x2="3432.3" y2="198.94"/>
+        </g>
+        <line class="cls-8" x1="87.55" y1="179.11" x2="87.55" y2="199.11"/>
+      </g>
+    </g>
+  </g>
+</svg>
