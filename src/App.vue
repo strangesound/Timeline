@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <div class="timeline gray"></div>
-    <div class="timeline yellow" ref="yellowTimeline"></div>
+    <div class="timeline gray" ></div>
+    <div class="timeline yellow" ref="yellowTimeline" @click="handleTimelineClick"></div>
     <div class="uzel-container" ref="uzelContainer" @scroll="handleScroll">
       <div class="uzelok"></div>
       <div class="timeline-items-container">
@@ -25,6 +25,10 @@ import data from '@/assets/json/data.json';
 
 const events = ref(data);
 const selectedEvent = ref(null);
+const eventYears = ref([]);
+const uzelContainer = ref(null);
+const yellowTimeline = ref(null);
+
 
 const showDetail = (event) => {
   selectedEvent.value = event;
@@ -34,8 +38,6 @@ const closeDetail = () => {
   selectedEvent.value = null;
 };
 
-const uzelContainer = ref(null);
-const yellowTimeline = ref(null);
 
 // Compute only even indexed events
 const evenEvents = computed(() => {
@@ -59,7 +61,7 @@ const getVisibleEvents = () => {
     }
     return false;
   });
-  console.log(visibleEvents);
+  // console.log(visibleEvents);
   return visibleEvents;
 };
 
@@ -71,8 +73,8 @@ const calculateYearsRange = () => {
     const minYear = Math.min(...years);
     const maxYear = Math.max(...years);
 
-    console.log('minYear', minYear);
-    console.log('maxYear', maxYear);
+    // console.log('minYear', minYear);
+    // console.log('maxYear', maxYear);
 
     updateYellowTimeline(minYear, maxYear);
   } else {
@@ -80,9 +82,11 @@ const calculateYearsRange = () => {
   }
 };
 
-const updateYellowTimeline = (minYear, maxYear) => {
-  const minTimelineYear = 1685;
+const minTimelineYear = 1685;
   const maxTimelineYear = 2035;
+
+
+const updateYellowTimeline = (minYear, maxYear) => {
   const timelineWidth = yellowTimeline.value.scrollWidth;
 
   const startPercentage = (minYear - minTimelineYear) / (maxTimelineYear - minTimelineYear);
@@ -91,9 +95,9 @@ const updateYellowTimeline = (minYear, maxYear) => {
   const maskWidth = (endPercentage - startPercentage) * timelineWidth;
   const maskPosition = startPercentage * timelineWidth;
 
-  console.log('maskWidth', maskWidth);
-  console.log('maskPosition', maskPosition);
-  console.log('timelineWidth', timelineWidth);
+  // console.log('maskWidth', maskWidth);
+  // console.log('maskPosition', maskPosition);
+  // console.log('timelineWidth', timelineWidth);
 
   yellowTimeline.value.style.maskSize = `${maskWidth}px 100%`;
   yellowTimeline.value.style.maskPosition = `${maskPosition - maskWidth / 2}px center`;
@@ -104,7 +108,67 @@ const handleScroll = () => {
   calculateYearsRange();
 };
 
+const handleTimelineClick = (event) => {
+  const timelineRect = event.target.getBoundingClientRect();
+  const clickX = event.clientX - timelineRect.left;
+  const timelineWidth = timelineRect.width;
+
+ 
+  // Calculate the clicked year based on the click position
+  const clickYear = minTimelineYear + (clickX / timelineWidth) * (maxTimelineYear - minTimelineYear);
+
+  // Find the closest event to the clicked year
+  const closestEvent = findClosestEvent(clickYear);
+
+  if (closestEvent) {
+    // Get the element of the closest event
+    const eventElement = document.getElementById(`event-${closestEvent.number}`);
+    if (eventElement) {
+      // Scroll the container to center the closest event
+      const containerRect = uzelContainer.value.getBoundingClientRect();
+      const eventRect = eventElement.getBoundingClientRect();
+      const offset = eventRect.left - containerRect.left - (containerRect.width / 2) + (eventRect.width / 2);
+
+      uzelContainer.value.scrollBy({
+        left: offset,
+        behavior: 'smooth'
+      });
+
+      // console.log('clickYear', clickYear);
+      // console.log('closestEvent', closestEvent);
+    }
+  }
+};
+
+const findClosestEvent = (clickYear) => {
+  let closestEvent = null;
+  let closestDifference = Infinity;
+
+  eventYears.value.forEach(({ event, minYear, maxYear }) => {
+    const difference = Math.min(
+      Math.abs(clickYear - minYear),
+      Math.abs(clickYear - maxYear)
+    );
+
+    if (difference < closestDifference) {
+      closestDifference = difference;
+      closestEvent = event;
+    }
+  });
+
+  return closestEvent;
+};
+
+
+
 onMounted(() => {
+
+  eventYears.value = events.value.map(event => {
+    const years = event.dates.match(/\d{4}/g).map(Number);
+    return { event, minYear: Math.min(...years), maxYear: Math.max(...years) };
+  });
+
+
   calculateYearsRange();
   window.addEventListener('resize', calculateYearsRange);
 });
@@ -158,6 +222,7 @@ onMounted(() => {
   left: 50%;
   top: 0;
   transform: translateX(-50%);
+  z-index: 999;
 }
 
 .gray {
