@@ -8,7 +8,7 @@
                 <!-- <h3>{{ event.dates }}</h3> -->
                 <!-- <p><strong>{{ event.short }}</strong></p> -->
                 <!-- <p>{{ event.description }}</p> -->
-                <p>{{ event.long }}</p>
+                <p>{{formattedText}}</p>
 
             </div>
         <!-- </div> -->
@@ -17,11 +17,19 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits } from 'vue';
+import { computed } from 'vue';
+
+import Typograf from 'typograf';
+const tp = new Typograf({locale: ['ru', 'en-US']});
+
+
 
 const props = defineProps({
     event: Object,
 });
+
+const formattedText = computed(() => tp.execute(props.event.long));
+
 
 const emit = defineEmits(['close-detail']);
 
