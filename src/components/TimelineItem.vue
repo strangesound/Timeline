@@ -1,5 +1,5 @@
 <template>
-    <div @click="showDetail" class="timeline-item">
+    <div @click="showDetail" class="timeline-item" :id="`event-${event.number}`">
         <div v-if="event.number % 2 === 0" class="vertical-line top">
         <div class="round"></div>
       </div>
