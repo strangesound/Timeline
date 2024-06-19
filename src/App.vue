@@ -206,7 +206,7 @@ onMounted(() => {
 
 .uzel-container {
   position: absolute;
-  top: 0;
+  top: 5%;
   left: 0;
   width: 100vw;
   height: 100vh;
