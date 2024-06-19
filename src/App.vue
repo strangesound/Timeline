@@ -1,5 +1,7 @@
 <template>
   <div class="container">
+    <!-- <StringTest/> -->
+
     <div class="timeline gray"></div>
     <div class="timeline yellow" ref="yellowTimeline" @click="handleTimelineClick"></div>
     <!-- <div class="test-line" ref="testLine"></div> -->
@@ -24,6 +26,7 @@
 import { onMounted, ref, computed } from 'vue';
 import TimelineItem from './components/TimelineItem.vue';
 import EventDetail from './components/EventDetail.vue';
+import StringTest from './components/StringTest.vue';
 import data from '@/assets/json/data.json';
 
 const events = ref(data.map((event, index) => ({ ...event, id: index })));
@@ -209,6 +212,9 @@ onMounted(() => {
   height: 100vh;
   overflow-x: scroll;
   overflow-y: hidden;
+  mask-image: url('/edges_mask.webp');
+  /* animation: rotate 20s infinite alternate ease;  */
+
 }
 
 .uzel-container::-webkit-scrollbar {
@@ -226,6 +232,9 @@ onMounted(() => {
   background-size: contain;
   background-position: center;
   background-repeat: repeat-x;
+  filter: drop-shadow(100px 100px 50px #00000094);
+
+
 }
 
 .timeline {
@@ -279,6 +288,7 @@ onMounted(() => {
 .timeline-crop {
   overflow: hidden;
   width: calc(945px*63);
+  /* width: 100vw; */
 
 }
 
@@ -289,4 +299,18 @@ onMounted(() => {
   grid-template-columns: repeat(31, 1890px);
   margin-left: calc(945px/2);
 }
+
+
+@keyframes rotate {
+      0% {
+        transform: translateY(-50px);
+      }
+      50% {
+        transform: translateY(50px);
+      }
+      100% {
+        transform: translateY(-50px);
+      }
+    }
+
 </style>

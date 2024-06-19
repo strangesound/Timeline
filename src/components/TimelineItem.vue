@@ -4,7 +4,7 @@
       <div class="round"></div>
     </div>
 
-    <div class="index">{{ props.event.id + 1 }}</div>
+    <!-- <div class="index">{{ props.event.id + 1 }}</div> -->
     <div class="date">{{ formattedDate }}</div>
     <div class="short">{{ formattedShort }}</div>
     <!-- <div class="short">{{ event.index }}</div> -->
@@ -70,11 +70,16 @@ const showDetail = () => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: end;
+  justify-content: start;
+  margin-top: 2vw;
+  margin-bottom: 0;
 }
 
 .top {
-  justify-content: start;
+  justify-content: end;
+  margin-top: 0;
+  margin-bottom: 1vw;
+
 
 }
 
