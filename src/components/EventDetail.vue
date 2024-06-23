@@ -1,11 +1,15 @@
 <template>
     <div  @click="closeDetail" class="event-detail">
-            <div class="content">
+        
+        <img :src="`/figma_images/${String(event.id + 1).padStart(2, '0')}.webp`" alt="Свиток" class="fscreen">
+
+        
+        <!-- <div class="content">
                 <img src="/svitok.webp" alt="Свиток" class="svitok">
                 <img class="landmark" :src="`/images/${event.id+1}.webp`" alt="">
                 <p>{{formattedText}}</p>
 
-            </div>
+            </div> -->
         <!-- </div> -->
         <!-- <button @click="closeDetail">Закрыть</button> -->
     </div>
@@ -34,6 +38,12 @@ const closeDetail = () => {
 </script>
 
 <style scoped>
+
+.fscreen{
+    width: 100%;
+    height: 100%;
+}
+
 p{
     text-align: left;
     white-space: pre-wrap;

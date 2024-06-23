@@ -40,8 +40,8 @@ const showDetail = () => {
 <style scoped>
 .timeline-item {
   cursor: pointer;
-  padding: 0 500px;
-  width: calc(945px*2);
+  /* padding: 0 150px; */
+  width: 837px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,6 +52,7 @@ const showDetail = () => {
 
 .date {
   color: #ffffff;
+  font-size: 60px;
 
 }
 .index {

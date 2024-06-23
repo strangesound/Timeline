@@ -1,19 +1,32 @@
 <template>
   <div class="container">
-    <!-- <StringTest/> -->
-
+    <!-- <div class="string-container" :style="{ transform: `translateX(${-scrollLeft}px)` }">
+      <StringTest v-for="n in 5" :key="n" />
+    </div> -->
     <div class="timeline gray"></div>
     <div class="timeline yellow" ref="yellowTimeline" @click="handleTimelineClick"></div>
-    <!-- <div class="test-line" ref="testLine"></div> -->
+
+    <p class="group-name" :style="{ transform: `translateX(${groupPosition}px)` }">{{ mostDatesGroup }}</p>
+    <!-- <div class="group-range-line"
+      :style="{ left: `${startPosition+200}px`, width: `${endPosition - startPosition}px` }">
+    </div> -->
+
     <div class="uzel-container" ref="uzelContainer" @scroll="handleScroll">
-      <div class="uzelok"></div>
-      <div class="timeline-crop">
-        <div class="timeline-items-container">
-          <TimelineItem v-for="event in evenEvents" :key="event.id" :event="event" @show-detail="showDetail" />
+      <div class="rope-left-right">
+        <img src="/kanat/rope.webp" alt="" class="rope-left">
+        <div class="uzel-and-timeline-container">
+          <div class="uzelok"></div>
+          <div class="timeline-crop">
+            <div class="timeline-items-container">
+              <TimelineItem v-for="event in evenEvents" :key="event.id" :event="event" @show-detail="showDetail" />
+            </div>
+            <div class="timeline-items-container bottom">
+              <TimelineItem v-for="event in oddEvents" :key="event.id" :event="event" @show-detail="showDetail" />
+            </div>
+          </div>
         </div>
-        <div class="timeline-items-container bottom">
-          <TimelineItem v-for="event in oddEvents" :key="event.id" :event="event" @show-detail="showDetail" />
-        </div>
+        <img src="/kanat/rope.webp" alt="" class="rope-left">
+
       </div>
     </div>
     <Transition>
@@ -28,6 +41,12 @@ import TimelineItem from './components/TimelineItem.vue';
 import EventDetail from './components/EventDetail.vue';
 import StringTest from './components/StringTest.vue';
 import data from '@/assets/json/data.json';
+
+window.addEventListener('scroll', () => {
+  const scrollLeft = window.scrollX;
+  console.log('scrollLeft', scrollLeft);
+});
+
 
 const events = ref(data.map((event, index) => ({ ...event, id: index })));
 // console.log(events);
@@ -82,13 +101,31 @@ const calculateYearsRange = () => {
     const minYear = Math.min(...years);
     const maxYear = Math.max(...years);
 
-    console.log('minYear-maxYear', minYear, ' - ', maxYear);
+    // console.log('minYear-maxYear', minYear, ' - ', maxYear);
 
     updateYellowTimeline(minYear, maxYear);
   } else {
     updateYellowTimeline(0, 0);
   }
+
+  updateMostDatesGroup(visibleEvents)
+
 };
+
+const mostDatesGroup = ref('')
+
+const updateMostDatesGroup = (visibleEvents) => {
+  const groupCounts = visibleEvents.reduce((acc, event) => {
+    acc[event.group] = (acc[event.group] || 0) + 1;
+    return acc;
+  }, {});
+
+  mostDatesGroup.value = Object.keys(groupCounts).reduce((a, b) =>
+    groupCounts[a] > groupCounts[b] ? a : b, '');
+
+  calculateGroupCenter()
+};
+
 
 const minTimelineYear = 1685;
 const maxTimelineYear = 2035;
@@ -103,24 +140,58 @@ const updateYellowTimeline = (minYear, maxYear) => {
   const maskWidth = (endPercentage - startPercentage) * timelineWidth;
   const maskPosition = startPercentage * timelineWidth;
 
-  console.log('startPercentage', startPercentage);
-  console.log('endPercentage', endPercentage);
-  console.log('maskWidth', maskWidth);
-  console.log('maskPosition', maskPosition);
-  console.log('timelineWidth', timelineWidth);
+  // console.log('startPercentage', startPercentage);
+  // console.log('endPercentage', endPercentage);
+  // console.log('maskWidth', maskWidth);
+  // console.log('maskPosition', maskPosition);
+  // console.log('timelineWidth', timelineWidth);
 
   yellowTimeline.value.style.maskSize = `${maskWidth}px 100vh`;
   yellowTimeline.value.style.maskPosition = `${maskPosition}px center`;
-  // yellowTimeline.value.style.maskPosition = `${maskPosition - maskWidth / 2}px center`;
 
-  // testLine.value.style.width = `${maskWidth}px`;
-  // testLine.value.style.marginLeft = `${maskPosition}px`;
+
+  // groupPosition.value = Math.min(Math.max(maskPosition - 1000 / 2, 0), 3440 - 1000);
+
+};
+
+const groupPosition = ref(0)
+const startPosition = ref(0)
+const endPosition = ref(0)
+const centerPosition = ref(0)
+
+const calculateGroupCenter = () => {
+  const groupEvents = events.value.filter(event => event.group === mostDatesGroup.value);
+  const years = groupEvents.flatMap(event => event.dates.match(/\d{4}/g).map(Number));
+  const minYear = Math.min(...years);
+  const maxYear = Math.max(...years);
+  const averageYear = years.reduce((sum, year) => sum + year, 0) / years.length;
+
+  const timelineWidth = yellowTimeline.value.scrollWidth;
+  console.log('averageYear',averageYear);
+  startPosition.value = ((minYear - minTimelineYear) / (maxTimelineYear - minTimelineYear)) * timelineWidth;
+  endPosition.value = ((maxYear - minTimelineYear) / (maxTimelineYear - minTimelineYear)) * timelineWidth;
+  centerPosition.value = ((averageYear - minTimelineYear) / (maxTimelineYear - minTimelineYear)) * timelineWidth;
+
+  console.log('centerPosition',centerPosition.value);
+  
+  
+  
+  const groupWidth = 1000; 
+  groupPosition.value = Math.min(Math.max((centerPosition.value - groupWidth / 2), 0), yellowTimeline.value.scrollWidth - groupWidth/2);
+  console.log('groupPosition',groupPosition.value);
+  // groupPosition.value = Math.min(Math.max(position - groupWidth / 2, 0), yellowTimeline.value.scrollWidth - groupWidth) + 200;
 
 };
 
 
+
+const scrollLeft = ref(0);
+
+
 const handleScroll = () => {
   calculateYearsRange();
+  scrollLeft.value = event.target.scrollLeft;
+
 };
 
 const handleTimelineClick = (event) => {
@@ -176,6 +247,8 @@ const findClosestEvent = (clickYear) => {
 
 
 
+
+
 onMounted(() => {
 
   eventYears.value = events.value.map(event => {
@@ -186,10 +259,41 @@ onMounted(() => {
 
   calculateYearsRange();
   window.addEventListener('resize', calculateYearsRange);
+
+
 });
 </script>
 
 <style scoped>
+.group-range-line {
+  position: absolute;
+  top: 15%;
+  height: 2px;
+  background-color: #B56E09;
+  z-index: 999;
+  transition: all 1s;
+}
+
+
+.rope-left-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: calc(506px*65);
+}
+
+.rope-left {
+  width: 506px;
+  height: 195px;
+  object-fit: contain;
+}
+
+.uzel-and-timeline-container {
+  position: relative;
+  height: 2160px;
+}
+
+
 .container {
   position: absolute;
   top: 0;
@@ -217,6 +321,19 @@ onMounted(() => {
 
 }
 
+.string-container {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  top: 5%;
+  left: 0;
+  width: 59535px;
+  height: 100vh;
+  overflow-x: show;
+  pointer-events: none;
+}
+
 .uzel-container::-webkit-scrollbar {
   display: none;
 }
@@ -226,9 +343,9 @@ onMounted(() => {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  background-image: url("/uzel.webp");
-  height: 260px;
-  width: 59535px;
+  background-image: url("/kanat/uzel.webp");
+  height: 195px;
+  width: calc(506px*63);
   background-size: contain;
   background-position: center;
   background-repeat: repeat-x;
@@ -246,6 +363,22 @@ onMounted(() => {
   transform: translateX(-50%);
   z-index: 999;
 }
+
+.group-name {
+  position: absolute;
+  z-index: 999;
+  font-size: 30px;
+  color: #B56E09;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 11vh;
+  width: 1000px;
+  text-align: center;
+
+
+}
+
 
 .test-line {
   width: 3440px;
@@ -274,43 +407,45 @@ onMounted(() => {
 }
 
 .timeline-items-container {
+  position: absolute;
   display: grid;
-  grid-template-columns: repeat(32, 1fr);
+  grid-template-columns: repeat(32, calc(506px*2));
   flex-direction: row;
   /* width: 60480px; */
   align-items: end;
   height: 40vh;
-  margin-left: calc(-945px/2);
-  /* gap: 30.5vw; */
-
+  margin-left: calc((-506px/2));
+  margin-top: 3vh;
 }
 
 .timeline-crop {
-  overflow: hidden;
-  width: calc(945px*63);
+  overflow: visible;
+  width: calc(506px*63);
   /* width: 100vw; */
 
 }
 
 .bottom {
   margin-top: 21vh;
-  height: 43vh;
+  height: 40vh;
   align-items: start;
-  grid-template-columns: repeat(31, 1890px);
-  margin-left: calc(945px/2);
+  grid-template-columns: repeat(31, calc(506px*2));
+  margin-left: calc(506px/2);
+  margin-top: 60vh;
 }
 
 
 @keyframes rotate {
-      0% {
-        transform: translateY(-50px);
-      }
-      50% {
-        transform: translateY(50px);
-      }
-      100% {
-        transform: translateY(-50px);
-      }
-    }
+  0% {
+    transform: translateY(-50px);
+  }
 
+  50% {
+    transform: translateY(50px);
+  }
+
+  100% {
+    transform: translateY(-50px);
+  }
+}
 </style>
