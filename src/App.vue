@@ -42,10 +42,10 @@ import EventDetail from './components/EventDetail.vue';
 import StringTest from './components/StringTest.vue';
 import data from '@/assets/json/data.json';
 
-window.addEventListener('scroll', () => {
-  const scrollLeft = window.scrollX;
-  console.log('scrollLeft', scrollLeft);
-});
+// window.addEventListener('scroll', () => {
+//   const scrollLeft = window.scrollX;
+//   console.log('scrollLeft', scrollLeft);
+// });
 
 
 const events = ref(data.map((event, index) => ({ ...event, id: index })));
@@ -185,12 +185,12 @@ const calculateGroupCenter = () => {
 
 
 
-const scrollLeft = ref(0);
+// const scrollLeft = ref(0);
 
 
 const handleScroll = () => {
   calculateYearsRange();
-  scrollLeft.value = event.target.scrollLeft;
+  // scrollLeft.value = event.target.scrollLeft;
 
 };
 
@@ -258,7 +258,7 @@ onMounted(() => {
 
 
   calculateYearsRange();
-  window.addEventListener('resize', calculateYearsRange);
+  // window.addEventListener('resize', calculateYearsRange);
 
 
 });

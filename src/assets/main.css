@@ -47,7 +47,7 @@ body {
 
 .v-enter-active,
 .v-leave-active {
-    transition: opacity .3s ease;
+    transition: opacity .7s ease;
 }
 
 .v-enter-from,
