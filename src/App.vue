@@ -375,6 +375,7 @@ onMounted(() => {
   top: 11vh;
   width: 1000px;
   text-align: center;
+  transition: transform 2s;
 
 
 }
