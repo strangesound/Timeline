@@ -194,8 +194,8 @@ const ropeRight = ref(null);
 
 // Переменные для управления частотой и амплитудой волны
 const amplitude = ref(10);
-const maxAmplitude = 60;
-const minAmplitude = 5;
+const maxAmplitude = 40;
+const minAmplitude = 3;
 let frequency = .5;
 let animationFrameId;
 
@@ -206,7 +206,7 @@ const animate = () => {
   const time = Date.now() / 1000; // Время в секундах
   const timeDiff = time - lastTimestamp;
   const scrollSpeed = Math.abs(scrollLeft.value - lastScrollLeft) / timeDiff;
-  console.log('scrollSpeed', scrollSpeed);
+  // console.log('scrollSpeed', scrollSpeed);
 
   if (uzelok.value) {
     const transformY = Math.sin(time * frequency * Math.PI * 2) * amplitude.value;
@@ -232,7 +232,7 @@ const animate = () => {
 
   animationFrameId = requestAnimationFrame(animate);
 
-  console.log('amplitude.value',amplitude.value);
+  // console.log('amplitude.value',amplitude.value);
 
 
 };
