@@ -14,9 +14,9 @@
 
     <div class="uzel-container" ref="uzelContainer" @scroll="handleScroll">
       <div class="rope-left-right">
-        <img src="/kanat/rope.webp" alt="" class="rope-left">
+        <img src="/kanat/rope.webp" alt="" class="rope-left" ref="ropeLeft">
         <div class="uzel-and-timeline-container">
-          <div class="uzelok"></div>
+          <div class="uzelok" ref="uzelok"></div>
           <div class="timeline-crop">
             <div class="timeline-items-container">
               <TimelineItem v-for="event in evenEvents" :key="event.id" :event="event" @show-detail="showDetail" />
@@ -26,7 +26,7 @@
             </div>
           </div>
         </div>
-        <img src="/kanat/rope.webp" alt="" class="rope-left">
+        <img src="/kanat/rope.webp" alt="" class="rope-left rope-right" ref="ropeRight">
 
       </div>
     </div>
@@ -43,10 +43,6 @@ import EventDetail from './components/EventDetail.vue';
 import StringTest from './components/StringTest.vue';
 import data from '@/assets/json/data.json';
 
-// window.addEventListener('scroll', () => {
-//   const scrollLeft = window.scrollX;
-//   console.log('scrollLeft', scrollLeft);
-// });
 
 
 const events = ref(data.map((event, index) => ({ ...event, id: index })));
@@ -169,32 +165,83 @@ const calculateGroupCenter = () => {
   const averageYear = maxYear - (maxYear - minYear) / 2;
 
   const timelineWidth = yellowTimeline.value.scrollWidth;
-  console.log('minYear', minYear);
-  console.log('maxYear', maxYear);
-  console.log('averageYear', averageYear);
+  // console.log('minYear', minYear);
+  // console.log('maxYear', maxYear);
+  // console.log('averageYear', averageYear);
   startPosition.value = ((minYear - minTimelineYear) / (maxTimelineYear - minTimelineYear)) * timelineWidth;
   endPosition.value = ((maxYear - minTimelineYear) / (maxTimelineYear - minTimelineYear)) * timelineWidth;
   centerPosition.value = ((averageYear - minTimelineYear) / (maxTimelineYear - minTimelineYear)) * timelineWidth;
 
-  console.log('centerPosition', centerPosition.value);
+  // console.log('centerPosition', centerPosition.value);
 
 
 
   const groupWidth = 1000;
   groupPosition.value = Math.min(Math.max((centerPosition.value - groupWidth / 2), 0), yellowTimeline.value.scrollWidth - groupWidth / 2);
-  console.log('groupPosition', groupPosition.value);
+  // console.log('groupPosition', groupPosition.value);
   // groupPosition.value = Math.min(Math.max(position - groupWidth / 2, 0), yellowTimeline.value.scrollWidth - groupWidth) + 200;
 
 };
 
 
 
-// const scrollLeft = ref(0);
+const scrollLeft = ref(0);
+let lastScrollLeft = 0;
+let lastTimestamp = Date.now();
+const uzelok = ref(null);
+const ropeLeft = ref(null);
+const ropeRight = ref(null);
+
+// Переменные для управления частотой и амплитудой волны
+const amplitude = ref(10);
+const maxAmplitude = 60;
+const minAmplitude = 5;
+let frequency = .5;
+let animationFrameId;
 
 
-const handleScroll = () => {
+
+const animate = () => {
+
+  const time = Date.now() / 1000; // Время в секундах
+  const timeDiff = time - lastTimestamp;
+  const scrollSpeed = Math.abs(scrollLeft.value - lastScrollLeft) / timeDiff;
+  console.log('scrollSpeed', scrollSpeed);
+
+  if (uzelok.value) {
+    const transformY = Math.sin(time * frequency * Math.PI * 2) * amplitude.value;
+
+    uzelok.value.style.transform = `translateY(${transformY + 130}px)`;
+    ropeLeft.value.style.transform = `translateY(${transformY + 130}px)`;
+    ropeRight.value.style.transform = `translateY(${transformY + 130}px)`;
+  }
+  lastScrollLeft = scrollLeft.value;
+  lastTimestamp = time;
+
+  // Плавное затухание амплитуды, если прокрутка остановлена
+  if (amplitude.value > minAmplitude) {
+    amplitude.value -= 0.1; // Скорость затухания
+    if (amplitude.value < minAmplitude) {
+      amplitude.value = minAmplitude;
+    }
+  }
+
+  if (scrollSpeed/120 > amplitude.value) {
+    amplitude.value = Math.max(minAmplitude, Math.min(maxAmplitude, scrollSpeed/120));
+  }
+
+  animationFrameId = requestAnimationFrame(animate);
+
+  console.log('amplitude.value',amplitude.value);
+
+
+};
+
+const handleScroll = (event) => {
   calculateYearsRange();
-  // scrollLeft.value = event.target.scrollLeft;
+
+  scrollLeft.value = event.target.scrollLeft;
+
 
 };
 
@@ -260,6 +307,8 @@ onMounted(() => {
     return { event, minYear: Math.min(...years), maxYear: Math.max(...years) };
   });
 
+  animate(); // Запускаем анимацию
+
 
   calculateYearsRange();
   // window.addEventListener('resize', calculateYearsRange);
@@ -280,16 +329,33 @@ onMounted(() => {
 
 
 .rope-left-right {
+  position: relative;
   display: flex;
+
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   width: calc(506px*65);
+
+
 }
 
 .rope-left {
+  /* position: absolute; */
+  /* margin-right: 506px; */
+  left: 0;
+  margin-top: -11.3vh;
   width: 506px;
   height: 195px;
   object-fit: contain;
+  transition: transform 0.1s linear;
+
+  /* animation: moveUpDown 6s infinite ease-in-out; */
+
+}
+
+.rope-right {
+  right: 0;
 }
 
 .uzel-and-timeline-container {
@@ -345,8 +411,8 @@ onMounted(() => {
 .uzelok {
   position: absolute;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 40%;
+  /* transform: translateY(-50%); */
   background-image: url("/kanat/uzel.webp");
   height: 195px;
   width: calc(506px*63);
@@ -354,6 +420,8 @@ onMounted(() => {
   background-position: center;
   background-repeat: repeat-x;
   filter: drop-shadow(100px 100px 50px #00000094);
+  /* animation: moveUpDown 6s infinite ease-in-out; */
+  transition: transform 0.1s linear;
 
 
 }
@@ -368,7 +436,7 @@ onMounted(() => {
   z-index: 999;
 }
 
-.group-container{
+.group-container {
   position: absolute;
   left: 200px;
   right: 200px;
@@ -458,6 +526,20 @@ onMounted(() => {
 
   100% {
     transform: translateY(-50px);
+  }
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(-72px);
+  }
+
+  50% {
+    transform: translateY(-122px);
+  }
+
+  100% {
+    transform: translateY(-72px);
   }
 }
 </style>
