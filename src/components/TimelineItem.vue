@@ -1,5 +1,6 @@
 <template>
-  <div @click="showDetail" class="timeline-item" :id="`event-${event.id}`">
+  <div @click="showDetail" class="timeline-item" :id="`event-${event.id}`" :class="{ 'visible': isVisible }"
+    ref="timelineItem">
     <div v-if="event.id % 2 !== 0" class="vertical-line top">
       <div class="round"></div>
     </div>
@@ -15,10 +16,12 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed, ref, onMounted, onUnmounted } from 'vue';
 import Typograf from 'typograf';
 const tp = new Typograf({ locale: ['ru', 'en-US'] });
 
+const timelineItem = ref(null);
+const isVisible = ref(false);
 
 const props = defineProps({
   event: Object,
@@ -35,6 +38,25 @@ const emit = defineEmits(['show-detail']);
 const showDetail = () => {
   emit('show-detail', props.event);
 };
+
+const observer = new IntersectionObserver((entries) => {
+  const entry = entries[0];
+  isVisible.value = entry.intersectionRatio >= 0.5;
+}, {
+  threshold: [0, 0.5, 1]
+});
+
+onMounted(() => {
+  observer.observe(timelineItem.value);
+});
+
+onUnmounted(() => {
+  observer.unobserve(timelineItem.value);
+});
+
+
+
+
 </script>
 
 <style scoped>
@@ -47,14 +69,23 @@ const showDetail = () => {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+
 
 }
+
+.timeline-item.visible {
+  opacity: 1;
+}
+
 
 .date {
   color: #ffffff;
   font-size: 60px;
 
 }
+
 .index {
   color: #ffffff;
   font-size: 1vw;

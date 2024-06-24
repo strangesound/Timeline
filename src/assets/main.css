@@ -15,7 +15,9 @@
 
 :root {
     --black: #000;
+    --brown: #B56E09;
     --light: #ECEBEA;
+    --gray: #b3b3b3;
     --base-unit: 10.8;
 }
 

@@ -5,8 +5,9 @@
     </div> -->
     <div class="timeline gray"></div>
     <div class="timeline yellow" ref="yellowTimeline" @click="handleTimelineClick"></div>
-
-    <p class="group-name" :style="{ transform: `translateX(${groupPosition}px)` }">{{ mostDatesGroup }}</p>
+    <div class="group-container">
+      <p class="group-name" :style="{ transform: `translateX(${groupPosition}px)` }" v-html="mostDatesGroup"></p>
+    </div>
     <!-- <div class="group-range-line"
       :style="{ left: `${startPosition+200}px`, width: `${endPosition - startPosition}px` }">
     </div> -->
@@ -164,21 +165,24 @@ const calculateGroupCenter = () => {
   const years = groupEvents.flatMap(event => event.dates.match(/\d{4}/g).map(Number));
   const minYear = Math.min(...years);
   const maxYear = Math.max(...years);
-  const averageYear = years.reduce((sum, year) => sum + year, 0) / years.length;
+  // const averageYear = years.reduce((sum, year) => sum + year, 0) / years.length;
+  const averageYear = maxYear - (maxYear - minYear) / 2;
 
   const timelineWidth = yellowTimeline.value.scrollWidth;
-  console.log('averageYear',averageYear);
+  console.log('minYear', minYear);
+  console.log('maxYear', maxYear);
+  console.log('averageYear', averageYear);
   startPosition.value = ((minYear - minTimelineYear) / (maxTimelineYear - minTimelineYear)) * timelineWidth;
   endPosition.value = ((maxYear - minTimelineYear) / (maxTimelineYear - minTimelineYear)) * timelineWidth;
   centerPosition.value = ((averageYear - minTimelineYear) / (maxTimelineYear - minTimelineYear)) * timelineWidth;
 
-  console.log('centerPosition',centerPosition.value);
-  
-  
-  
-  const groupWidth = 1000; 
-  groupPosition.value = Math.min(Math.max((centerPosition.value - groupWidth / 2), 0), yellowTimeline.value.scrollWidth - groupWidth/2);
-  console.log('groupPosition',groupPosition.value);
+  console.log('centerPosition', centerPosition.value);
+
+
+
+  const groupWidth = 1000;
+  groupPosition.value = Math.min(Math.max((centerPosition.value - groupWidth / 2), 0), yellowTimeline.value.scrollWidth - groupWidth / 2);
+  console.log('groupPosition', groupPosition.value);
   // groupPosition.value = Math.min(Math.max(position - groupWidth / 2, 0), yellowTimeline.value.scrollWidth - groupWidth) + 200;
 
 };
@@ -364,11 +368,18 @@ onMounted(() => {
   z-index: 999;
 }
 
+.group-container{
+  position: absolute;
+  left: 200px;
+  right: 200px;
+}
+
+
 .group-name {
   position: absolute;
   z-index: 999;
   font-size: 30px;
-  color: #B56E09;
+  color: var(--gray);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -376,6 +387,7 @@ onMounted(() => {
   width: 1000px;
   text-align: center;
   transition: transform 2s;
+
 
 
 }
@@ -427,12 +439,11 @@ onMounted(() => {
 }
 
 .bottom {
-  margin-top: 21vh;
   height: 40vh;
   align-items: start;
   grid-template-columns: repeat(31, calc(506px*2));
   margin-left: calc(506px/2);
-  margin-top: 60vh;
+  margin-top: 58vh;
 }
 
 
