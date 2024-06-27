@@ -1,8 +1,10 @@
 <template>
     <div @click="closeDetail" class="event-detail">
 
-        <video ref="svitok" class="svitok" playsinline autoplay muted :src="`/svitki/${props.event.length}.webm`"></video>
-        <img ref="eventText" :src="`/figma_images/${String(event.id + 1).padStart(2, '0')}.webp`" alt="Свиток" class="fscreen opacity0">
+        <video ref="svitok" class="svitok" playsinline autoplay muted
+            :src="`/svitki/${props.event.length}.webm`"></video>
+        <img ref="eventText" :src="`/figma_images/${String(event.id + 1).padStart(2, '0')}.webp`" alt="Свиток"
+            class="fscreen opacity0">
 
         <!-- <div class="content">
                 <img src="/svitok.webp" alt="Свиток" class="svitok">
@@ -41,11 +43,14 @@ const closeDetail = () => {
 
 
 onMounted(() => {
-
-    svitok.value.style.width = `${props.event.length+400}px`;
+    if (svitok.value) {
+        svitok.value.style.width = `${props.event.length + 400}px`;
         setTimeout(() => {
             eventText.value.style.opacity = 1
-        }, 2000);
+        }, 1300);
+
+        svitok.value.playbackRate = 1.3; // Установите желаемую скорость воспроизведения
+    }
 
 });
 
@@ -70,13 +75,13 @@ onMounted(() => {
 
 .svitok {
     width: 2490px;
-    height: 1500px;
+    height: 1600px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -1;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 p {
