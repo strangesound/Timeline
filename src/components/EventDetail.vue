@@ -1,10 +1,12 @@
 <template>
-    <div @click="closeDetail" class="event-detail">
+    <div @click.stop="closeDetail" class="event-detail">
 
-        <video ref="svitok" class="svitok" playsinline autoplay muted
+        <video @click.stop="" ref="svitok" class="svitok" playsinline autoplay muted
             :src="`/svitki/${props.event.length}.webm`"></video>
         <img ref="eventText" :src="`/figma_images/${String(event.id + 1).padStart(2, '0')}.webp`" alt="Свиток"
             class="fscreen opacity0">
+
+        <button class="close" @click.stop="closeDetail"></button>
 
         <!-- <div class="content">
                 <img src="/svitok.webp" alt="Свиток" class="svitok">
@@ -38,12 +40,23 @@ const props = defineProps({
 const emit = defineEmits(['close-detail']);
 
 const closeDetail = () => {
+    const svitokOffAudio = new Audio('/sounds/svitok_off.wav');
+    svitokOffAudio.playbackRate = 2;
+    svitokOffAudio.play();
+
     emit('close-detail');
 };
 
 
 onMounted(() => {
+    const svitokOnAudio = new Audio('/sounds/svitok_on.wav');
+    svitokOnAudio.playbackRate = 1.5;
+
+    svitokOnAudio.play();
     if (svitok.value) {
+
+
+
         svitok.value.style.width = `${props.event.length + 400}px`;
         setTimeout(() => {
             eventText.value.style.opacity = 1
@@ -57,6 +70,22 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.close {
+    position: absolute;
+    z-index: 999;
+    top: 150px;
+    right: 150px;
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+    background-image: url('/close.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
 .opacity0 {
     opacity: 0;
     transition: opacity 1s;
