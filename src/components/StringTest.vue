@@ -74,7 +74,7 @@ onMounted(() => {
     if (success) {
       return shader;
     }
-    console.log(gl.getShaderInfoLog(shader));
+    // console.log(gl.getShaderInfoLog(shader));
     gl.deleteShader(shader);
   }
 
@@ -90,7 +90,7 @@ onMounted(() => {
     if (success) {
       return program;
     }
-    console.log(gl.getProgramInfoLog(program));
+    // console.log(gl.getProgramInfoLog(program));
     gl.deleteProgram(program);
   }
 

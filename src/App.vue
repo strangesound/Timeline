@@ -16,7 +16,11 @@
       <div class="rope-left-right">
         <img src="/kanat/rope.webp" alt="" class="rope-left" ref="ropeLeft">
         <div class="uzel-and-timeline-container">
-          <div class="uzelok" ref="uzelok"></div>
+          <div class="uzelok" ref="uzelok">
+
+            <div class="uzelok-click-item" v-for="n in 63" :key="n" @click="showDetail(events[n-1])"></div>
+
+          </div>
           <div class="timeline-crop">
             <div class="timeline-items-container">
               <TimelineItem v-for="event in evenEvents" :key="event.id" :event="event" @show-detail="showDetail" />
@@ -46,7 +50,7 @@ import data from '@/assets/json/data.json';
 
 
 const events = ref(data.map((event, index) => ({ ...event, id: index })));
-// console.log(events);
+console.log(events);
 
 const selectedEvent = ref(null);
 const eventYears = ref([]);
@@ -56,6 +60,7 @@ const yellowTimeline = ref(null);
 
 
 const showDetail = (event) => {
+  console.log('event', event);
   selectedEvent.value = event;
 };
 
@@ -105,11 +110,25 @@ const calculateYearsRange = () => {
     updateYellowTimeline(0, 0);
   }
 
-  updateMostDatesGroup(visibleEvents)
+  getCentralGroup(visibleEvents)
 
 };
 
 const mostDatesGroup = ref('')
+
+
+function getCentralGroup(visibleEvents) {
+  if (!Array.isArray(visibleEvents) || visibleEvents.length === 0) {
+    return '';
+  }
+
+  const centralGroupIndex = Math.floor(visibleEvents.length / 2);
+  const centralGroup = visibleEvents[centralGroupIndex];
+
+  mostDatesGroup.value = centralGroup.group;
+  calculateGroupCenter()
+}
+
 
 const updateMostDatesGroup = (visibleEvents) => {
   const groupCounts = visibleEvents.reduce((acc, event) => {
@@ -119,6 +138,8 @@ const updateMostDatesGroup = (visibleEvents) => {
 
   mostDatesGroup.value = Object.keys(groupCounts).reduce((a, b) =>
     groupCounts[a] > groupCounts[b] ? a : b, '');
+
+  // console.log('mostDatesGroup', mostDatesGroup);
 
   calculateGroupCenter()
 };
@@ -226,8 +247,8 @@ const animate = () => {
     }
   }
 
-  if (scrollSpeed/120 > amplitude.value) {
-    amplitude.value = Math.max(minAmplitude, Math.min(maxAmplitude, scrollSpeed/120));
+  if (scrollSpeed / 120 > amplitude.value) {
+    amplitude.value = Math.max(minAmplitude, Math.min(maxAmplitude, scrollSpeed / 120));
   }
 
   animationFrameId = requestAnimationFrame(animate);
@@ -318,6 +339,8 @@ onMounted(() => {
 </script>
 
 <style scoped>
+
+
 .group-range-line {
   position: absolute;
   top: 15%;
@@ -410,6 +433,9 @@ onMounted(() => {
 
 .uzelok {
   position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   left: 0;
   top: 40%;
   /* transform: translateY(-50%); */
@@ -422,8 +448,16 @@ onMounted(() => {
   filter: drop-shadow(100px 100px 50px #00000094);
   /* animation: moveUpDown 6s infinite ease-in-out; */
   transition: transform 0.1s linear;
+  padding: 0 60px;
+}
 
 
+.uzelok-click-item{
+  width: 400px;
+  height: 400px;
+  background-color: #ff040400;
+  transform: translateY(-100px);
+  pointer-events: all;
 }
 
 .timeline {
