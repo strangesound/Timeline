@@ -50,7 +50,7 @@ import data from '@/assets/json/data.json';
 
 
 const events = ref(data.map((event, index) => ({ ...event, id: index })));
-console.log(events);
+// console.log(events);
 
 const selectedEvent = ref(null);
 const eventYears = ref([]);
@@ -60,7 +60,7 @@ const yellowTimeline = ref(null);
 
 
 const showDetail = (event) => {
-  console.log('event', event);
+  // console.log('event', event);
   selectedEvent.value = event;
 };
 
