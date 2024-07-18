@@ -83,6 +83,7 @@ onUnmounted(() => {
 .date {
   color: #ffffff;
   font-size: 60px;
+  white-space: pre-line;
 
 }
 
